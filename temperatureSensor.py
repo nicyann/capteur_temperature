@@ -15,9 +15,6 @@ class TemperatureSensor:
 
     def read_temp(self):
         lines = self.read_temp_raw()
-        lines = read_temp_raw()  # Lit le fichier de température
-        # Tant que la première ligne ne vaut pas 'YES', on attend 0,2s
-        # On relis ensuite le fichier
         while lines[0].strip()[-3:] != 'YES':
             time.sleep(0.2)
             lines = self.read_temp_raw()
